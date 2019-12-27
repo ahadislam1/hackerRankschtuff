@@ -39,8 +39,19 @@ var head: Node?
 var arr = [2, 3, 4, 1]
 
 for num in arr {
-    print("Current number is :\(num)")
     head = insert(head: head, data: num)
 }
 
 display(head: head)
+
+enum StringToIntTypecastingError: Error {
+    case BadString
+}
+
+func stringToInt(inputString: String) throws -> Int {
+    guard let int = Int(inputString) else {
+        throw StringToIntTypecastingError.BadString
+    }
+    return int
+    
+}
