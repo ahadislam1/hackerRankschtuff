@@ -55,3 +55,21 @@ func stringToInt(inputString: String) throws -> Int {
     return int
     
 }
+
+enum RangeError : Error {
+    case NotInRange(String)
+}
+
+class Calculator {
+    func power(n: Int, p: Int) throws -> Int {
+        guard n > -1 && p > -1 else {
+            throw RangeError.NotInRange("n and p should be non-negative")
+        }
+        
+        return Int(pow(Double(n), Double(p)))
+        
+    }
+}
+
+print()
+print(try! Calculator().power(n: 5, p: 3))
