@@ -1,27 +1,29 @@
 import Foundation
 
 class Solution {
-    //Write your code here
+    
+    private var queue = [Character]()
+    private var stack = [Character]()
     
     func pushCharacter(ch: Character) {
-        
+        stack.append(ch)
     }
     
     func enqueueCharacter(ch: Character) {
-        
+        queue = [ch] + queue
     }
     
     func popCharacter() -> Character {
-        return "a"
+        return stack.removeLast()
     }
     
     func dequeueCharacter() -> Character {
-        return "b"
+        return queue.removeLast()
     }
 }
 
 // read the string s.
-let s = "heyFriend"
+let s = "yes"
 
 // create the Solution class object p.
 let obj = Solution()
@@ -38,6 +40,9 @@ var isPalindrome = true
 // pop the top character from stack.
 // dequeue the first character from queue.
 // compare both the characters.
+
+obj.display()
+
 for _ in 0..<(s.count / 2) {
     if obj.popCharacter() != obj.dequeueCharacter() {
         isPalindrome = false
@@ -52,3 +57,11 @@ if isPalindrome {
 } else {
     print("The word, \(s), is not a palindrome.")
 }
+
+var whatever = [Character]()
+
+whatever += ["a"]
+
+whatever = "b" + whatever
+
+
