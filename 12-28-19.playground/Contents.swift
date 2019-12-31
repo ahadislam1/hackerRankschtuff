@@ -20,6 +20,11 @@ class Solution {
     func dequeueCharacter() -> Character {
         return queue.removeLast()
     }
+    
+    func display() {
+        print(queue)
+        print(stack)
+    }
 }
 
 // read the string s.
