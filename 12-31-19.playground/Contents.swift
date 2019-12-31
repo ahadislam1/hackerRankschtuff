@@ -35,3 +35,11 @@ let n2 = 3
 let a2 = [3, 2, 1]
 
 bubbleSort(n: n2, a: a2)
+
+struct Printer<T> {
+    func printArray(array: [T]) {
+        array.forEach { print($0) }
+    }
+}
+
+Printer<Int>().printArray(array: a2)
